@@ -1,4 +1,6 @@
-﻿namespace FoodLog;
+﻿using System.Reflection;
+
+namespace FoodLog;
 
 public partial class MainPage : ContentPage
 {
@@ -6,6 +8,7 @@ public partial class MainPage : ContentPage
 
 	public MainPage()
 	{
+		
 		InitializeComponent();
 		BindingContext = new MainViewModel();
 	}
@@ -13,7 +16,6 @@ public partial class MainPage : ContentPage
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
 		count++;
-
 		if (count == 1)
 			CounterBtn.Text = $"Clicked {count} time";
 		else

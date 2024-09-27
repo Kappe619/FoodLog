@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodLog.Views.TableView">
+
+    <StackLayout>
+        <Label Text="Tabellarische Darstellung" FontSize="20" HorizontalOptions="Center" />
+
+        <!-- Tabelle oder Listendarstellung der Daten -->
+        <ListView x:Name="DataList">
+            <!-- Datenvorlage für die ListView -->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentView>
