@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             
+             xmlns:viewModels="clr-namespace:FoodLog.ViewModels"            
+             xmlns:localization="clr-namespace:FoodLog.Resources.Localization"
              xmlns:views="clr-namespace:FoodLog.Views"
-
              x:Class="FoodLog.MainPage">
 
     <ScrollView>
@@ -35,6 +35,14 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="BtnAddData"
+                Text="{x:Static localization:Strings.AddData}"
+                HeightRequest="50" BackgroundColor="LightBlue"
+                Command="{Binding AddDataCommand}"
+                />
+
         </VerticalStackLayout>
     </ScrollView>
 
