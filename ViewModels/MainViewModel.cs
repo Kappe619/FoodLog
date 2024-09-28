@@ -14,7 +14,7 @@ namespace FoodLog.ViewModels
             service = new FoodDataService();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {

@@ -29,7 +29,7 @@ namespace FoodLog.ViewModels
         {
             FoodItems = new ObservableCollection<FoodItem>
             {
-                
+
             };
             LoadDataCommand = new Command(async () => await LoadDataAsync());
 
@@ -48,7 +48,20 @@ namespace FoodLog.ViewModels
             await LoadDataAsync();
         }
 
-              public async Task LoadDataAsync()
+        /// <summary>
+        /// Asynchronously loads data from the "FoodData.json" file located in the app's Resources/Raw folder,
+        /// deserializes it into a list of <see cref="FoodItem"/> objects, and adds them to the <see cref="FoodItems"/> collection.
+        /// </summary>
+        /// <returns>
+        /// A task representing the asynchronous operation of loading and deserializing the JSON data.
+        /// </returns>
+        /// <remarks>
+        /// This method opens the packaged "FoodData.json" file, reads its content, and deserializes the JSON data
+        /// into a list of <see cref="FoodItem"/> objects. The deserialized objects are then added to the
+        /// <see cref="FoodItems"/> collection. If needed, existing items can be cleared before adding new ones by uncommenting
+        /// the <c>FoodItems.Clear()</c> line.
+        /// </remarks>
+        public async Task LoadDataAsync()
         {
             // Get the stream from the packaged file in Resources/Raw
             using var stream = await FileSystem.OpenAppPackageFileAsync("FoodData.json");
