@@ -5,23 +5,20 @@ namespace FoodLog.Views
 {
     public partial class TableView : ContentView
     {
-        // ObservableCollection, um die Daten zu binden
-        public ObservableCollection<string> Items { get; set; }
-
+        // Constructor
         public TableView()
         {
             InitializeComponent();
 
+            // Set BindingContext to ViewModel (best practice)
             BindingContext = new TableViewModel();
 
-            // Beispiel-Daten
-            Items = new ObservableCollection<string>
-            {
-                "Eintrag 1", "Eintrag 2", "Eintrag 3"
-            };
+            // If you want, you can directly interact with the ViewModel in code-behind as well
+            // (This step is optional, better to handle such logic inside ViewModel)
+        }
 
-            // Daten an die ListView binden
-            DataList.ItemsSource = Items;
+        private void Button_Clicked(object sender, EventArgs e)
+        {
         }
     }
 }

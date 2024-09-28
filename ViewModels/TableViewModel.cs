@@ -1,33 +1,38 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Text.Json;
+using System.Windows.Input;
+using FoodLog.ViewModels;
+using FoodLog.Models;
 
 namespace FoodLog.ViewModels
 {
-    // TableViewModel wird als ViewModel verwendet
     public class TableViewModel : INotifyPropertyChanged
     {
+        public string testString = Strings.testString;
         // Beispiel-Datenquelle für die Tabelle
-        private ObservableCollection<string> _items;
-        public ObservableCollection<string> Items
+        private ObservableCollection<FoodItem> _foodItems;
+        public ObservableCollection<FoodItem> FoodItems
         {
-            get => _items;
+            get => _foodItems;
             set
             {
-                if (_items != value)
+                if (_foodItems != value)
                 {
-                    _items = value;
-                    OnPropertyChanged(nameof(Items));
+                    _foodItems = value;
+                    OnPropertyChanged(nameof(FoodItems));
                 }
             }
         }
 
-        // Konstruktor, um Beispiel-Daten zu initialisieren
         public TableViewModel()
         {
-            Items = new ObservableCollection<string>
+            FoodItems = new ObservableCollection<FoodItem>
             {
-                "Eintrag 1", "Eintrag 2", "Eintrag 3"
+                
             };
+            LoadDataCommand = new Command(async () => await LoadDataAsync());
+
         }
 
         // Event, um die View über Änderungen zu informieren
@@ -38,5 +43,38 @@ namespace FoodLog.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        private async void LoadData()
+        {
+            await LoadDataAsync();
+        }
+
+              public async Task LoadDataAsync()
+        {
+            // Get the stream from the packaged file in Resources/Raw
+            using var stream = await FileSystem.OpenAppPackageFileAsync("foodData.json");
+
+            // Read the content of the stream
+            using var reader = new StreamReader(stream);
+            string json = await reader.ReadToEndAsync();
+
+            // Deserialize the JSON into a list of FoodItem objects
+            var items = JsonSerializer.Deserialize<List<FoodItem>>(json);
+
+            // Add the deserialized items to the FoodItems collection
+            if (items != null)
+            {
+                // FoodItems.Clear();  // Clear the existing items (if necessary)
+                foreach (var item in items)
+                {
+                    FoodItems.Add(item);
+                }
+            }
+        }
+
+        public ICommand LoadDataCommand { get; }
+
+
     }
+
+
 }
