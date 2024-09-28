@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Resources;
 
 namespace FoodLog.Resources.Localization
@@ -6,24 +5,27 @@ namespace FoodLog.Resources.Localization
     public static class Strings
 
     {
-
-        public static string FoodItemName => "Food Item Name";
+        public static string AddData => "Add Data";
         public static string Calories => "Calories";
+        public static string Chart => "Chart";
+        public static string Data => "Data";
+        public static string Day => "Day";
+        public static string Food => "Food";
+        public static string FoodItemName => "Food Item Name";
+        public static string Import => "Import";
+        public static string Year => "Year";
+        public static string LoadData => "Load Data";
+        public static string Month => "Month";
+        public static string Name => "Name";
         public static string Protein => "Protein";
+        public static string Save => "Save";
+        public static string Table => "Table";
 
-
-        public static string? testString = "test the resource";
-        private static readonly ResourceManager resourceManager = new ResourceManager("FoodLog/Resources.Localization.Strings", typeof(Strings).Assembly);
         #region Resource Manager
-
-        public static string TableLabelText => "this is the table label";
-
+        private static readonly ResourceManager resourceManager = new ResourceManager("FoodLog/Resources.Localization.Strings", typeof(Strings).Assembly);
         //FIX: Implement correct resx handling
         // private static readonly ResourceManager resourceManager = new ResourceManager("Resources.Localization.Strings", typeof(Strings).Assembly);
         // private static readonly ResourceManager resourceManager = new ResourceManager("FoodLog.Resources.Localization.Strings", typeof(Strings).Assembly);
-        public static string TestText => "test text";
-        // public static string? MyText => resourceManager.GetString("MyText", CultureInfo.CurrentUICulture);
-        // public static string MyButtonText2 => resourceManager.GetString("MyButtonText", new CultureInfo("de-DE"));
         #endregion
     }
 
