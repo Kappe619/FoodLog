@@ -1,6 +1,8 @@
 using System.Globalization;
 using System.Resources;
 
+namespace FoodLog.Resources.Localization
+{
 public static class Strings
 
 {
