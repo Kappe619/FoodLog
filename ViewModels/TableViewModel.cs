@@ -10,7 +10,6 @@ namespace FoodLog.ViewModels
 {
     public class TableViewModel : INotifyPropertyChanged
     {
-        public string testString = Strings.testString;
         // Beispiel-Datenquelle für die Tabelle
         private ObservableCollection<FoodItem> _foodItems;
         public ObservableCollection<FoodItem> FoodItems
@@ -52,7 +51,7 @@ namespace FoodLog.ViewModels
               public async Task LoadDataAsync()
         {
             // Get the stream from the packaged file in Resources/Raw
-            using var stream = await FileSystem.OpenAppPackageFileAsync("foodData.json");
+            using var stream = await FileSystem.OpenAppPackageFileAsync("FoodData.json");
 
             // Read the content of the stream
             using var reader = new StreamReader(stream);
