@@ -76,3 +76,5 @@ coverage.*
 # Mac specific file that should not be included
 .AppleDouble
 .LSOverride
+
+.fake
