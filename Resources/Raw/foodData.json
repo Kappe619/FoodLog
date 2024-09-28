@@ -1,0 +1,5 @@
+[
+    { "Name": "Apple", "Calories": 95, "Protein": 0.5 },
+    { "Name": "Banana", "Calories": 105, "Protein": 1.3 },
+    { "Name": "Chicken Breast", "Calories": 165, "Protein": 31 }
+]
