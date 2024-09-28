@@ -2,7 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:FoodLog.ViewModels"
-             xmlns:resource="FoodLog.Resources"
+             xmlns:localization="clr-namespace:FoodLog.Resources.Localization"
              x:Class="FoodLog.Views.TableView">
 
     <StackLayout>
@@ -10,15 +10,31 @@
                 FontSize="20"
                 HorizontalOptions="Center"/>
 
-        <!-- Bind the ListView's ItemsSource to the FoodItems collection -->
-        <ListView ItemsSource="{Binding FoodItems}">
-            <ListView.ItemTemplate>
+
+                <!-- Header Row -->
+        <Grid ColumnDefinitions="*,*,*" Padding="0,10,0,10">
+            <Label Text="{x:Static localization:Strings.FoodItemName}" FontAttributes="Bold" Grid.Column="0" />
+            <Label Text="{x:Static localization:Strings.Calories}" FontAttributes="Bold" Grid.Column="1" />
+            <Label Text="{x:Static localization:Strings.Protein}" FontAttributes="Bold" Grid.Column="2" />
+        </Grid>
+
+        <!-- Data Rows -->
+        <CollectionView ItemsSource="{Binding FoodItems}">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <!-- Display each food item as a simple text label -->
-                    <TextCell Text="{Binding .}" />
+                    <Grid ColumnDefinitions="*,*,*" Padding="0,5,0,5">
+                        <!-- Name Column -->
+                        <Label Text="{Binding Name}" Grid.Column="0" />
+
+                        <!-- Calories Column -->
+                        <Label Text="{Binding Calories}" Grid.Column="1" />
+
+                        <!-- Protein Column -->
+                        <Label Text="{Binding Protein}" Grid.Column="2" />
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     <Button Text="command button" 
         Command="{Binding LoadDataCommand}"

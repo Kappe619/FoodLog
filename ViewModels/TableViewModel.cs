@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Windows.Input;
 using FoodLog.ViewModels;
 using FoodLog.Models;
+using FoodLog.Resources.Localization;
 
 namespace FoodLog.ViewModels
 {
