@@ -1,14 +1,24 @@
+﻿using FoodLog.Shared.Interfaces;
+using FoodLog.Shared.Models;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
-using FoodLog.Models;
+using System.Threading.Tasks;
 
-namespace FoodLog.ServicesP
+namespace FoodLog.Shared.Services
 {
-    public class FoodDataService
+    public class FileService
     {
+        private readonly IFileService _fileService;
+        public FileService(IFileService fileService) {
 
-        public FoodDataService() { }
+            _fileService = fileService;
+        
+        }
         private ObservableCollection<FoodItem> _foodItems = new ObservableCollection<FoodItem>();
 
         public ObservableCollection<FoodItem> FoodItems
@@ -69,11 +79,15 @@ namespace FoodLog.ServicesP
         // Helper method to load and deserialize data from a JSON file, with optional filepath parameter
         private async Task<List<FoodItem>> LoadDataFromFileAsync(string filePath)
         {
-            using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
-            using var reader = new StreamReader(stream);
-            var json = await reader.ReadToEndAsync();
+            //using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
+            //using var reader = new StreamReader(stream);
+            //var json = await reader.ReadToEndAsync();
 
+            //return JsonSerializer.Deserialize<List<FoodItem>>(json);
+
+            var json = await _fileService.ReadFileAsync(filePath);
             return JsonSerializer.Deserialize<List<FoodItem>>(json);
+
         }
 
         // INotifyPropertyChanged implementation (if needed)

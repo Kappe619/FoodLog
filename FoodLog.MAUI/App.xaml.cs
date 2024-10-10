@@ -1,11 +1,17 @@
-﻿namespace FoodLog;
+﻿using FoodLog.MAUI.Services;
+using FoodLog.Shared.Interfaces;
 
-public partial class App : Application
+namespace FoodLog.MAUI
 {
-	public App()
-	{
-		InitializeComponent();
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+            MainPage = new AppShell();
+            //builder.Services.AddSingleton<IFileService, MauiFileService>();
+
+        }
+    }
 }

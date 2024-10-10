@@ -1,35 +1,39 @@
+﻿using FoodLog.Shared.Interfaces;
+using FoodLog.Shared.Services;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
-using FoodLog.ServicesP;
 
-namespace FoodLog.ViewModels
+namespace FoodLog.Shared.ViewModels
 {
-    class MainViewModel
+    internal class MainViewModel
     {
-        //public ICommand AddDataCommand { get; }
-        //private readonly FoodDataService service = null!;
-        //public MainViewModel()
-        //{
-        //    AddDataCommand = new Command(async () => await AddDataAsync());
-        //    service = new FoodDataService();
-        //}
+        public ICommand AddDataCommand { get; }
+        private readonly IFileService service = null!;
+        public MainViewModel()
+        {
+            //AddDataCommand = new ICommand(async () => await AddDataAsync());
+            //service = new FileService();
+        }
 
-        //public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        //protected void OnPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-        //public async void AddData()
-        //{
-        //    await AddDataAsync();
-        //}
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        public async void AddData()
+        {
+            await AddDataAsync();
+        }
 
-        //public async Task AddDataAsync()
-        //{
-        //    await service.LoadAndMergeDataAsync();
-        //}
-
-
+        public async Task AddDataAsync()
+        {
+            await service.LoadAndMergeDataAsync();
+        }
     }
 }

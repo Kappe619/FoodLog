@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodLog.WPF", "..\FoodLog.WPF\FoodLog.WPF.csproj", "{B40F1281-1629-4A25-8F4E-9026E8B92E0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodLog.WPF", "FoodLog.WPF\FoodLog.WPF.csproj", "{B40F1281-1629-4A25-8F4E-9026E8B92E0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodLog.MAUI", "..\FoodLog.MAUI\FoodLog.MAUI.csproj", "{355EBAB2-77CB-4786-855A-17B2EC54BBF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodLog.MAUI", "FoodLog.MAUI\FoodLog.MAUI.csproj", "{355EBAB2-77CB-4786-855A-17B2EC54BBF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodLog.Shared", "..\FoodLog.Shared\FoodLog.Shared.csproj", "{2E04329C-5E17-46FB-BF72-1B0025CE20F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodLog.Shared", "FoodLog.Shared\FoodLog.Shared.csproj", "{2E04329C-5E17-46FB-BF72-1B0025CE20F5}"
 EndProject
+
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

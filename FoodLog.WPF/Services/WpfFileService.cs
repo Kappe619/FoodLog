@@ -1,13 +1,14 @@
 ﻿using FoodLog.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoodLog.MAUI.Services
+namespace FoodLog.WPF.Services
 {
-    public class MauiFileService : IFileService
+    public class WpfFileService : IFileService
     {
         public Task<string> LoadAndMergeDataAsync()
         {
@@ -16,9 +17,7 @@ namespace FoodLog.MAUI.Services
 
         public async Task<string> ReadFileAsync(string filePath)
         {
-            using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
-            using var reader = new StreamReader(stream);
-            return await reader.ReadToEndAsync();
+            return await File.ReadAllTextAsync(filePath);
         }
     }
 }

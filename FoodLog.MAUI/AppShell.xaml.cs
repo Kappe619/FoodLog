@@ -1,4 +1,4 @@
-﻿namespace FoodLog.FoodLog.MAUI
+﻿namespace FoodLog.MAUI
 {
     public partial class AppShell : Shell
     {
