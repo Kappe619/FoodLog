@@ -14,5 +14,26 @@
         <Button Text="Remove Item" Command="{Binding RemoveItemCommand}" />
 
         <Label Text="this is the table view"/>
+
+        <VerticalStackLayout>
+            <Label Text="Food Items" 
+               FontAttributes="Bold"
+               FontSize="Medium"
+               HorizontalOptions="Center" />
+
+            <CollectionView ItemsSource="{Binding TableItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5" ColumnDefinitions="*,*,*" RowSpacing="5">
+                            <Label Grid.Column="0" Text="{Binding Name}" />
+                            <Label Grid.Column="1" Text="{Binding Quantity}" />
+                            <Label Grid.Column="2" Text="{Binding Calories}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+
+
     </VerticalStackLayout>
 </ContentView>

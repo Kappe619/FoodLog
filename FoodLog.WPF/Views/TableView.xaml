@@ -21,6 +21,14 @@
 
         <Label Content="this is the wpf table view"/>
 
+        <DataGrid ItemsSource="{Binding TableItems}"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch" />
+
     </StackPanel>
 
 </UserControl>
