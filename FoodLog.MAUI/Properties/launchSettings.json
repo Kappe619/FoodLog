@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "macOS": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    },
+    "Android": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    },
+    "iOS": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
