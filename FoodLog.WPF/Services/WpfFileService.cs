@@ -1,13 +1,4 @@
 ﻿using FoodLog.Shared.Interfaces;
-using FoodLog.Shared.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.IO;
-using Xamarin.Essentials;
 
 namespace FoodLog.WPF.Services
 {
