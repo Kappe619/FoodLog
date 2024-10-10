@@ -85,7 +85,7 @@ namespace FoodLog.Shared.Services
 
             //return JsonSerializer.Deserialize<List<FoodItem>>(json);
 
-            var json = await _fileService.ReadFileAsync(filePath);
+            var json = await _fileService.ReadFileAsync();
             return JsonSerializer.Deserialize<List<FoodItem>>(json);
 
         }
