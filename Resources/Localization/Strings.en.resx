@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <!-- Deine Ressourcen hier -->
+  <data name="MyText" xml:space="preserve">
+    <value>Willkommen in der App!</value>
+  </data>
+  <data name="MyButtonText" xml:space="preserve">
+    <value>Klicken Sie hier!</value>
+  </data>
+</root>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FoodLog.Views"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:localization="clr-namespace:FoodLog.Resources.Localization"
+             x:Class="FoodLog.Views.GraphView">
+
+    <StackLayout Padding="10">
+        <!-- Label or Header for the Graph -->
+            <Label 
+            Text="{x:Static localization:Strings.ChartName}" FontAttributes="Bold" Grid.Column="0"
+               FontSize="Large" 
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+
+        <!-- ChartView for displaying the chart -->
+        <microcharts:ChartView Chart="{Binding Chart}"
+                               HeightRequest="300"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand" />
+    </StackLayout>
+
+</ContentPage>
