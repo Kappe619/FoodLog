@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
     <PackageReference Include="Syncfusion.Licensing" Version="27.1.52" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="27.1.52" />
   </ItemGroup>
 
   <ItemGroup>

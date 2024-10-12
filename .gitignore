@@ -77,4 +77,7 @@ coverage.*
 .AppleDouble
 .LSOverride
 
+# env file that contains license keys
+.env
+
 .fake

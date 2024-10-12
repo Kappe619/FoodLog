@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FoodLog.WPF.Views"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -21,13 +22,19 @@
 
         <Label Content="this is the wpf table view"/>
 
-        <DataGrid ItemsSource="{Binding TableItems}"
-                  AutoGenerateColumns="True"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  IsReadOnly="True"
-                  HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch" />
+        <syncfusion:SfDataGrid ItemsSource="{Binding TableItems}"
+                       AutoGenerateColumns="True"
+                       AllowEditing="False"
+                       AllowGrouping="True"
+                       AllowSorting="True"
+                       AllowFiltering="True"
+                       ColumnSizer="Star"
+                       SelectionMode="Single"
+                       GridLinesVisibility="Both"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch">
+        </syncfusion:SfDataGrid>
+
 
     </StackPanel>
 
